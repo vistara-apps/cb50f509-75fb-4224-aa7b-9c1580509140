@@ -41,7 +41,7 @@ const BitcoinPiCycle: React.FC<Props> = ({ data, signals }) => {
     if (payload.signal) {
       return <Dot cx={cx} cy={cy} r={4} fill="red" />;
     }
-    return null;
+    return <></>;
   };
 
   const CustomTooltip = ({ active, payload, label }: CustomTooltipProps) => {
@@ -73,7 +73,7 @@ const BitcoinPiCycle: React.FC<Props> = ({ data, signals }) => {
           <Line type="monotone" dataKey="sma111" stroke="#82ca9d" dot={false} connectNulls={false} />
           <Line type="monotone" dataKey="sma350" stroke="#ff7300" dot={false} connectNulls={false} />
           <Line type="monotone" dataKey="piLine" stroke="#ffc658" dot={false} connectNulls={false} />
-          <Line type="monotone" dataKey="price" stroke="transparent" dot={<CustomDot />} connectNulls={false} />
+          <Line type="monotone" dataKey="price" stroke="transparent" dot={CustomDot} connectNulls={false} />
         </LineChart>
       </ResponsiveContainer>
       <h2 className="text-xl font-semibold mt-6 mb-2">Signal Dates</h2>
